@@ -1,4 +1,3 @@
-import mongoose from "mongoose";
 import error from "../error.js";
 import classModel from "../model/classModel.js";
 
