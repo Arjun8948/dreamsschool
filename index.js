@@ -22,7 +22,6 @@ app.get("/", (req, res) => {
   res.send("working");
 });
 
-app.listen(process.env.port, () => {
+app.listen();
   DbConnection();
-  console.log(`Server is running ${process.env.port}`);
-});
+ 
