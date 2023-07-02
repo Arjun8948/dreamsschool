@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import adminModel from "../../model/admin/adminModel.js";
 import error from "../../error.js";
 import jwt  from "jsonwebtoken"
-import bcrypt from "bcrypt"
+import bcrypt from "bcryptjs"
 import sendAdminGmail from "../../model/mail/adminRagistetion.js";
 
 export const adminSignup =async(req,res,next)=>{

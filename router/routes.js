@@ -64,7 +64,7 @@ import {
   instructordelete,
   instructorget,
   instructorupdate,
-} from "../model/instructorController.js";
+} from "../controller/instructorController.js";
 
 import {
   addVideo,

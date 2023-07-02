@@ -1,7 +1,7 @@
 
 import error from "../error.js";
 import instructorModel from "../model/Instractor/lntractorModel.js"
-import bcrypt from "bcrypt"
+import bcrypt from "bcryptjs"
 import sendInstrutorGmail from "../model/mail/instractorRegistetion.js";
 import jwt from "jsonwebtoken";
 
