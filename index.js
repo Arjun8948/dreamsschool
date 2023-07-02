@@ -1,16 +1,12 @@
 import express from "express";
-// import dotenv from "dotenv";
+
 import DbConnection from "./connection/dbConnetion.js";
 import route from "./router/routes.js";
- 
 
 const app = express();
 app.use(express.json());
- 
+
 app.use("/api", route);
-
-// dotenv.config();
-
 
 app.use("/upload", express.static("upload"));
 
@@ -29,4 +25,3 @@ app.listen(3000, () => {
   DbConnection();
   console.log(`Server is running ${process.env.port}`);
 });
-

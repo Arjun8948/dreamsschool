@@ -1,4 +1,3 @@
- 
 import enquairyModel from "../model/enquairyModel.js";
 import error from "../error.js";
 

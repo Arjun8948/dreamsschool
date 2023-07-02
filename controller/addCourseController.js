@@ -1,6 +1,5 @@
- import error from "../error.js";
+import error from "../error.js";
 import courseModel from "../model/courseModel .js";
- 
 
 export const addCourse = async (req, res, next) => {
   const url = req.protocol + "://" + req.get("host");
