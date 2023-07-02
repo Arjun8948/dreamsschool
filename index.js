@@ -18,9 +18,6 @@ app.use((err, req, res, next) => {
   return res.status(status).json({ sucess: false, status, massage });
 });
 
-app.get("/", (req, res) => {
-  res.send("working");
-});
 
 app.listen();
   DbConnection();
