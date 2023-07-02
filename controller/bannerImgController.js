@@ -1,4 +1,3 @@
-import error from "../error.js";
 import bannerModel from "../model/bannerModel.js";
 import error from "../error.js";
 
