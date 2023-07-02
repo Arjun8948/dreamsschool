@@ -11,7 +11,8 @@ app.use("/api", route);
 
 // dotenv.config();
 
-// app.use("/upload", express.static("upload"));
+
+app.use("/upload", express.static("upload"));
 
 // error massage middleware function
 app.use((err, req, res, next) => {
@@ -26,6 +27,6 @@ app.get("/", (req, res) => {
 
 app.listen(3000, () => {
   DbConnection();
-  console.log(`Server is running ${3000}`);
+  console.log(`Server is running ${process.env.port}`);
 });
 
