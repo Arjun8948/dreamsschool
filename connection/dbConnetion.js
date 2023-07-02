@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const DbConnection = () => {
   const connection = mongoose
-    .connect('mongodb+srv://dreamsschool:dreamsschool@cluster0.mwhhuiu.mongodb.net/dreamsSchool?retryWrites=true&w=majority')
+    .connect(process.env.MongoDb)
     .then((err, dataBase) => {
       console.log("database Connected !");
     })
