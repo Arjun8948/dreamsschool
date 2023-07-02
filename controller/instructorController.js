@@ -4,6 +4,7 @@ import instructorModel from "../model/Instractor/lntractorModel.js"
 import bcrypt from "bcryptjs"
 import sendInstrutorGmail from "../model/mail/instractorRegistetion.js";
 import jwt from "jsonwebtoken";
+const ScrateKey='a6vv777mn@56y%^*####7&**@(99r3r4jbnjfdidr0ry840-023u2-3hi3b32uuujj4jurnjh323n3jjj)'
 
 
 export const instructorSignup = async (req, res, next) => {
@@ -41,7 +42,7 @@ export const instructorLogin = async (req, res, next) => {
         if(!checkUser) return next(error(404,'Instructor not found'));
         const checkPassword = await bcrypt.compare(req.body.password,checkUser.password)
         if(!checkPassword)return next(error(401,"email or password invalid"))
-        const token = jwt.sign({id:checkUser._id},process.env.ScrateKey);
+        const token = jwt.sign({id:checkUser._id},ScrateKey);
         const {password:password,...data} =checkUser._doc
         res.status(200).json({token, data:data,massage:"loging sucessfully "})
         

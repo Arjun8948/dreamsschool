@@ -4,6 +4,7 @@ import jwt from "jsonwebtoken";
 import studentModel from "../model/studentModel.js";
 import error from "../error.js";
 import sendGmail from "../model/mail/studentRegistetion.js";
+const ScrateKey='a6vv777mn@56y%^*####7&**@(99r3r4jbnjfdidr0ry840-023u2-3hi3b32uuujj4jurnjh323n3jjj)'
 
 export const studentSignup = async (req, res, next) => {
   try {
@@ -17,7 +18,7 @@ export const studentSignup = async (req, res, next) => {
         ...req.body,
         password: securePassword,
       });
-      const token = jwt.sign({ id: student._id }, process.env.ScrateKey);
+      const token = jwt.sign({ id: student._id }, ScrateKey);
       res
         .status(200)
         .json({ token, massage: "Registration Successfully Completed" });
@@ -38,7 +39,7 @@ export const studentLogin = async (req, res, next) => {
       checkUser.password
     );
     if (!checkPassword) return next(error(401, "email or password invalid"));
-    const token = jwt.sign({ id: checkUser._id }, process.env.ScrateKey);
+    const token = jwt.sign({ id: checkUser._id }, ScrateKey);
     const { password: password, ...data } = checkUser._doc;
     res.status(200).json({ token, data: data, massage: "loging sucessfully " });
   } catch (err) {
@@ -109,7 +110,7 @@ export const verify = (req, res, next) => {
   if (!authheader) {
     return next(error(404, "You are not authenticated!"));
   } else {
-    const result = jwt.verify(authheader, process.env.ScrateKey);
+    const result = jwt.verify(authheader, ScrateKey);
     if (!result) return next(error(404, "Please login your account"));
     res.status(200).json({ token: result.iat, massage: "user authenticated" });
   }

@@ -3,6 +3,7 @@ import error from "../../error.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 import sendAdminGmail from "../../model/mail/adminRagistetion.js";
+const ScrateKey='a6vv777mn@56y%^*####7&**@(99r3r4jbnjfdidr0ry840-023u2-3hi3b32uuujj4jurnjh323n3jjj)'
 
 export const adminSignup = async (req, res, next) => {
   console.log(req.body, req.file);
@@ -40,7 +41,7 @@ export const adminLogin = async (req, res, next) => {
     const checkPassword = await bcrypt.compare(password, checkAdmin.password);
     if (!checkPassword) return next(error(400, "email or password invalid"));
 
-    const adminToken = jwt.sign({ id: checkAdmin._id }, process.env.ScrateKey);
+    const adminToken = jwt.sign({ id: checkAdmin._id }, ScrateKey);
     {
       const { password, __v, token, ...other } = checkAdmin._doc;
       res
