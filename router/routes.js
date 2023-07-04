@@ -1,7 +1,7 @@
 import express from "express";
 import multer from "multer";
 import path from "path";
-import * as uuidv4 from "uuid";
+import { v4 as uuidv4 } from "uuid";
 const DIR = "./upload/";
 import {
   deleteEnquairy,
